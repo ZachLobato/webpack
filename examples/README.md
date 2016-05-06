@@ -5,7 +5,6 @@
 1. Run `npm install` in the root of the project.
 2. Run `node build.js` in the specific example directory.
 
-### For Example:
 ```
 >/webpack cd examples/commonjs
 >/webpack/examples/commonjs node build.js)
