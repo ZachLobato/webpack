@@ -1,12 +1,7 @@
-This very simple example shows usage of CommonJS.
+# CommonJS
+This very simple example shows usage of [CommonJS](https://webpack.github.io/docs/commonjs.html).
 
-The three files `example.js`, `increment.js` and `math.js` form a dependency chain. They use `require(dependency)` to declare dependencies.
-
-You can see the output file that webpack creates by bundling them together in one file. Keep in mind that webpack adds comments to make reading this file easier. These comments are removed when minimizing the file.
-
-You can also see the info messages webpack prints to console (for both normal and minimized build).
-
-# example.js
+## example.js
 
 ``` javascript
 var inc = require('./increment').increment;
@@ -14,7 +9,7 @@ var a = 1;
 inc(a); // 2
 ```
 
-# increment.js
+## increment.js
 
 ``` javascript
 var add = require('./math').add;
@@ -23,7 +18,7 @@ exports.increment = function(val) {
 };
 ```
 
-# math.js
+## math.js
 
 ``` javascript
 exports.add = function() {
@@ -35,7 +30,15 @@ exports.add = function() {
 };
 ```
 
-# js/output.js
+## explanation
+The three files `example.js`, `increment.js` and `math.js` form a dependency chain. They use `require(dependency)` to declare dependencies.
+
+You can see the output file that webpack creates by bundling them together in one file. Keep in mind that webpack adds comments to make reading this file easier. These comments are removed when minimizing the file.
+
+You can also see the info messages webpack prints to console (for both normal and minimized build).
+
+
+## js/output.js
 
 ``` javascript
 /******/ (function(modules) { // webpackBootstrap
@@ -122,9 +125,9 @@ exports.add = function() {
 /******/ ]);
 ```
 
-# Info
+## Info
 
-## Uncompressed
+### Uncompressed
 
 ```
 Hash: 604c5c1fe4f4a9772853
@@ -141,7 +144,7 @@ chunk    {0} output.js (main) 329 bytes [rendered]
         cjs require ./math [0] ./increment.js 1:10-27
 ```
 
-## Minimized (uglify-js, no zip)
+### Minimized (uglify-js, no zip)
 
 ```
 Hash: 604c5c1fe4f4a9772853
