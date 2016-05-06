@@ -7,7 +7,7 @@
 
 ```
 >/webpack cd examples/commonjs
->/webpack/examples/commonjs node build.js)
+>/webpack/examples/commonjs node build.js
 ```
 
 ## commonjs
