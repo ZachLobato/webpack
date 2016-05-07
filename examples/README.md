@@ -3,6 +3,10 @@
 ## Building an Example
 
 1. Run `npm install` in the root of the project.
+```
+>/webpack npm install
+```
+
 2. Run `node build.js` in the specific example directory.
 
 ```
