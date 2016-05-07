@@ -1,31 +1,36 @@
-# example.js
+# require.resolve
+An example demonstrating how to cache clearing of modules with `require.resolve` and `require.cache`.
+
+## example.js
 
 ``` javascript
 {{example.js}}
 ```
 
-# a.js
-
+## a.js
 
 ``` javascript
 {{a.js}}
 ```
 
-# js/output.js
+## explanation
+
+
+## js/output.js
 
 ``` javascript
 {{js/output.js}}
 ```
 
-# Info
+## Info
 
-## Uncompressed
+### Uncompressed
 
 ```
 {{stdout}}
 ```
 
-## Minimized (uglify-js, no zip)
+### Minimized (uglify-js, no zip)
 
 ```
 {{min:stdout}}

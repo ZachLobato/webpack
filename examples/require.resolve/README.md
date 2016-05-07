@@ -1,4 +1,7 @@
-# example.js
+# require.resolve
+An example demonstrating how to cache clearing of modules with `require.resolve` and `require.cache`.
+
+## example.js
 
 ``` javascript
 var a = require("./a");
@@ -16,14 +19,16 @@ var a2 = require("./a");
 if(a == a2) throw new Error("Cache clear failed :(");
 ```
 
-# a.js
-
+## a.js
 
 ``` javascript
 module.exports = Math.random();
 ```
 
-# js/output.js
+## explanation
+
+
+## js/output.js
 
 ``` javascript
 /******/ (function(modules) { // webpackBootstrap
@@ -39,16 +44,16 @@ module.exports = Math.random();
 
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
 /******/ 		};
 
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 
 /******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
+/******/ 		module.l = true;
 
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -102,16 +107,16 @@ module.exports = Math.random();
 /******/ ]);
 ```
 
-# Info
+## Info
 
-## Uncompressed
+### Uncompressed
 
 ```
 Hash: ea909c1878908e23c0bf
-Version: webpack 2.0.6-beta
+Version: webpack 2.1.0-beta.6
 Time: 65ms
     Asset     Size  Chunks             Chunk Names
-output.js  2.02 kB       0  [emitted]  main
+output.js  2.01 kB       0  [emitted]  main
 chunk    {0} output.js (main) 326 bytes [rendered]
     > main [1] ./example.js 
     [0] ./a.js 31 bytes {0} [built]
@@ -121,14 +126,14 @@ chunk    {0} output.js (main) 326 bytes [rendered]
     [1] ./example.js 295 bytes {0} [built]
 ```
 
-## Minimized (uglify-js, no zip)
+### Minimized (uglify-js, no zip)
 
 ```
 Hash: ea909c1878908e23c0bf
-Version: webpack 2.0.6-beta
-Time: 157ms
+Version: webpack 2.1.0-beta.6
+Time: 121ms
     Asset       Size  Chunks             Chunk Names
-output.js  354 bytes       0  [emitted]  main
+output.js  343 bytes       0  [emitted]  main
 chunk    {0} output.js (main) 326 bytes [rendered]
     > main [1] ./example.js 
     [0] ./a.js 31 bytes {0} [built]
