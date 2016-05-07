@@ -11,7 +11,6 @@ This very simple example shows usage of [CommonJS](https://webpack.github.io/doc
 
 ``` javascript
 {{increment.js}}
-};
 ```
 
 ## math.js
